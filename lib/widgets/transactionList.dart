@@ -8,7 +8,6 @@ import '../screens/transactionDetails.dart';
 
 class TransactionList extends StatelessWidget {
   final List data;
-
   TransactionList(this.data);
 
   @override
