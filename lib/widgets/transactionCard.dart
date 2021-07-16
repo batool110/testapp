@@ -29,14 +29,13 @@ class TransactionCard extends StatelessWidget {
                     height: getProportionateScreenWidth(65),
                     width: getProportionateScreenWidth(65),
                     decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                          begin: Alignment.topLeft,
-                          colors: [
-                            Colors.amberAccent[700],
-                            primaryColor,
-                            lightColor,
-                            Colors.amber[100],
-                          ]),
+                      gradient:
+                          LinearGradient(begin: Alignment.topLeft, colors: [
+                        Colors.amberAccent[700],
+                        primaryColor,
+                        lightColor,
+                        Colors.amber[100],
+                      ]),
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: Column(
@@ -44,20 +43,16 @@ class TransactionCard extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Text(
-                          formatter.format(
-                            DateTime.tryParse(
-                              data['date'],
-                            ),
-                          ),
+                          formatter.format(DateTime.tryParse(
+                            "${data['date']}",
+                          )),
                           textAlign: TextAlign.center,
                           style: dayStyle,
                         ),
                         Text(
-                          monthFormatter.format(
-                            DateTime.tryParse(
-                              data['date'],
-                            ),
-                          ),
+                          monthFormatter.format(DateTime.tryParse(
+                            "${data['date']}",
+                          )),
                           style: monthStyle,
                         ),
                       ],
@@ -69,16 +64,14 @@ class TransactionCard extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          data['type'].toString(),
+                          "${data['type']}",
                           style: headingStyle,
                         ),
                         SizedBox(height: 5),
                         Text(
-                          dateFormatter.format(
-                            DateTime.tryParse(
-                              data['date'],
-                            ),
-                          ),
+                          dateFormatter.format(DateTime.tryParse(
+                            "${data['date']}",
+                          )),
                         ),
                       ],
                     ),
@@ -90,12 +83,12 @@ class TransactionCard extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.fromLTRB(0, 0, 5, 0),
                     child: Text(
-                      data['amount'],
+                      "${data['amount']}",
                       style: amountStyle,
                     ),
                   ),
                   Text(
-                    data['currencyCode'],
+                    "${data['currencyCode']}",
                     style: currStyle,
                   ),
                 ],
